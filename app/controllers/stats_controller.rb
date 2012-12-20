@@ -1,5 +1,7 @@
 include ActionView::Helpers::NumberHelper
 
+skip_before_filter :authenticate
+
 class StatsController < ApplicationController
   def index
     @matches_labels = []
