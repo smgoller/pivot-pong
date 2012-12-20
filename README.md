@@ -15,27 +15,27 @@ Achievements
 -------
 Achievement checking is trigger based. Most of the time the achievements will revolve around the outcome of a match, but there are others that can be obtained outside of entering a match. For example, tweeting a victory or uploading a profile picture. The achievements model is mixed into [font awesome](http://fortawesome.github.com/Font-Awesome/) so your badge list can be extended to any of those as you can see through implementing any of the subclasses. Current list of achievement at the time of writing this are:
 
-- Smite the Bobby - Beat the one and only: Bobby Isaacson
-- Twilight Saga - Log a match after 6pm PST
-- Overly Attached - Last 6 matches were with the same person
-- The Grind - Play 5 consecutive matches without changing rank
-- Number Juan - Dos no es un ganador y tres nadie recuerda
-- Bragging Rights - Tweet Your Victory
-- Laying Out the Welcome Mat - Play someone not on the ladder
-- Hulk Smash - Overall win record vs. someone spreads 10 or more
-- Where'd You Go? - Gone inactive after 30 days of not playing
-- I Heart You - Last 3 logged matches were with the same person
-- Morning Madness - Log a match before 9am PST
-- The Summit - Played during the Social Chorus Summit
-- You're on a Streak! - Win 5 matches in a row
-- Long Jump - Advances more than 3 spots in rank from a single match
-- Little Ben! - Played more than 50 matches
-- When Life Gives You Lemons... - Lose 5 matches in a row
-- Big Ben! - Played more than 100 matches
-- Working Hard or Hardly Working? - Log more than 5 matches in a single day
-- Picture Perfect - Upload an avatar in your user profile
-- Beginner - Welcome to the wonderful game of pong
-- Same Sh*t, Different Day - Stay the same rank 7 matches in a row
+- *Smite the Bobby* - Beat the one and only: Bobby Isaacson
+- *Twilight Saga* - Log a match after 6pm PST
+- *Overly Attached* - Last 6 matches were with the same person
+- *The Grind* - Play 5 consecutive matches without changing rank
+- *Number Juan* - Dos no es un ganador y tres nadie recuerda
+- *Bragging Rights* - Tweet Your Victory
+- *Laying Out the Welcome Mat* - Play someone not on the ladder
+- *Hulk Smash* - Overall win record vs. someone spreads 10 or more
+- *Where'd You Go?* - Gone inactive after 30 days of not playing
+- *I Heart You* - Last 3 logged matches were with the same person
+- *Morning Madness* - Log a match before 9am PST
+- *The Summit* - Played during the Social Chorus Summit
+- *You're on a Streak!* - Win 5 matches in a row
+- *Long Jump* - Advances more than 3 spots in rank from a single match
+- *Little Ben!* - Played more than 50 matches
+- *When Life Gives You Lemons...* - Lose 5 matches in a row
+- *Big Ben!* - Played more than 100 matches
+- *Working Hard or Hardly Working?* - Log more than 5 matches in a single day
+- *Picture Perfect* - Upload an avatar in your user profile
+- *Beginner* - Welcome to the wonderful game of pong
+- *Same Sh*t, Different Day* - Stay the same rank 7 matches in a row
 
 Analytics
 -------
