@@ -207,22 +207,55 @@ td.action, th.action {
     a { padding-right: 10px; }
   }
   .player_stats {
-    width: 560px;
+    width: 360px;
     text-align: center;
     background-color: #fff;
     border-radius: 4px;
     border: 2px solid #000;
     padding: 10px;
   }
-  .player_stat { width: 280px; }
+  .player_stat { width: 180px; }
   .odds {
     text-align: left;
-    h3 {
-      float: right;
+    select {
       width: 200px;
+      float: left;
+    }
+    h3 {
+      float: left;
+      width: 100px;
       text-align: center;
       margin-top: -6px;
       color: #6E1674;
+      margin-left: 15px;
+    }
+  }
+  .totem_pole {
+    float: left;
+    width: 166px;
+    margin-left: 30px;
+    .totem {
+      width: 166px;
+      position: relative;
+    }
+    .totem_0 {
+      background: url('totem_0.png');
+      height: 75px;
+    }
+    .totem_1 {
+      background: url('totem_1.png');
+      height: 77px;
+    }
+    .totem_2 {
+      background: url('totem_2.png');
+      height: 76px;
+    }
+    .totem_avatar {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 10px;
+      left: 57px;
     }
   }
 }
@@ -239,7 +272,10 @@ td.action, th.action {
 }
 
 .post {
-  li { line-height: inherit; }
+  li {
+    line-height: inherit;
+    white-space: normal;
+  }
 }
 
 .badge-large {

@@ -43,6 +43,6 @@ At the end of every match, a match log is also created and bound to each of the 
 
 Authentication
 -------
-The matches and players pages have simple http auth which can be set by ENV['username'] and ENV['password']. They default to ping/pong respectively. Public pages include the list of achievements, what's new, and global stats.
+The matches and players pages have simple http auth which can be set by **ENV['username']** and **ENV['password']**. They default to ping/pong respectively. Public pages include the list of achievements, what's new, and global stats.
 
 Welcome all comments and feedback (Twitter): [@barretto_chris](http://twitter.com/barretto_chris)

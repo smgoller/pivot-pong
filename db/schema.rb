@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207064249) do
+ActiveRecord::Schema.define(:version => 20121221185348) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "player_id"
@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(:version => 20121207064249) do
     t.integer  "rank"
     t.boolean  "active",     :default => true
     t.string   "avatar"
+  end
+
+  create_table "totems", :force => true do |t|
+    t.integer "player_id"
+    t.integer "loser_id"
   end
 
 end

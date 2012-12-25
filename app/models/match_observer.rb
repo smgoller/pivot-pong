@@ -4,6 +4,7 @@ class MatchObserver < ActiveRecord::Observer
     create_logs(match)
     check_achievements(match)
     check_specials(match)
+    check_totems(match)
     mark_inactive_players
   end
 
@@ -53,6 +54,13 @@ class MatchObserver < ActiveRecord::Observer
     achievements.each do |achievement|
       achievement.special(match)
     end
+  end
+
+  def check_totems(match)
+    winner = match.winner
+    loser = match.loser
+    winner.totems.find_or_create_by_loser_id(loser.id)
+    loser.totems.where(loser_id: winner.id).destroy_all
   end
 
   def mark_inactive_players

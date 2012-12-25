@@ -12,6 +12,7 @@ describe MatchObserver do
       observer.should_receive(:create_logs)
       observer.should_receive(:check_achievements)
       observer.should_receive(:check_specials)
+      observer.should_receive(:check_totems)
       observer.should_receive(:mark_inactive_players)
       observer.after_save(match)
     end
@@ -51,6 +52,34 @@ describe MatchObserver do
       me.reload.achievements.map(&:class).should include(SmiteBobby)
       Match.create(winner: bobby, loser: me)
       me.reload.achievements.map(&:class).should_not include(SmiteBobby)
+    end
+  end
+
+  describe "#check_totems" do
+    it "should award a totem if winner does not own yet" do
+      me.totems.count.should == 0
+      you.totems.count.should == 0
+      Match.create(winner: me, loser: you)
+      me.reload.totems.count.should == 1
+      you.reload.totems.count.should == 0
+    end
+
+    it "should not award a totem if winner already owns" do
+      me.totems.create(loser: you)
+      me.reload.totems.count.should == 1
+      you.reload.totems.count.should == 0
+      Match.create(winner: me, loser: you)
+      me.reload.totems.count.should == 1
+      you.reload.totems.count.should == 0
+    end
+
+    it "should remove totem from winner loser beats them" do
+      me.totems.create(loser: you)
+      me.reload.totems.count.should == 1
+      you.reload.totems.count.should == 0
+      Match.create(winner: you, loser: me)
+      me.reload.totems.count.should == 0
+      you.reload.totems.count.should == 1
     end
   end
 

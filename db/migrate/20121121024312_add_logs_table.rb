@@ -4,6 +4,6 @@ class AddLogsTable < ActiveRecord::Migration
       t.integer :player_id
       t.integer :match_id
       t.integer :rank
-      end
+    end
   end
 end

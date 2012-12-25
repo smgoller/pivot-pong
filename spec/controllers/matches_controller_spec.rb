@@ -13,7 +13,7 @@ describe MatchesController do
     describe "when achievements are won from a match" do
       before { get :index, d: true }
       it { should be_success }
-      it { assigns(:matches).should == Match.order("occured_at desc") }
+      it { assigns(:matches).sort.should == Match.order("occured_at desc").sort }
       it { assigns(:match).should be }
       it { assigns(:most_recent_match).should == Match.order("occured_at desc").first }
     end
