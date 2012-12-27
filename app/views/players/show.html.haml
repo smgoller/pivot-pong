@@ -30,12 +30,12 @@
     %hr
     .odds
       %h5 What are your odds of beating this person?
-      = select_tag :players, options_from_collection_for_select(Player.all, "id", "display_name"), prompt: "Select a Player"
+      = select_tag :players, options_from_collection_for_select(Player.order(:name), "id", "display_name"), prompt: "Select a Player"
       %h3#calculator -
       .clearfix
   .totem_pole
     = image_tag 'totem_head.png'
-    - @player.totems.each_with_index do |totem, i|
+    - @player.totems.each do |totem|
       %div{ class: "totem totem_#{cycle(0,1,2)}", title: totem.loser.display_name }
         .totem_avatar= player_avatar totem.loser, :thumb
   .clearfix
