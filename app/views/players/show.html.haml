@@ -36,7 +36,7 @@
   .totem_pole
     = image_tag 'totem_head.png'
     - @player.totems.each do |totem|
-      %div{ class: "totem totem_#{cycle(0,1,2)}", title: totem.loser.display_name }
+      %div{ class: "totem totem_#{cycle(0,1,2,3)}", title: totem.loser.display_name }
         .totem_avatar= player_avatar totem.loser, :thumb
   .clearfix
   %hr
