@@ -1,7 +1,6 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
-  //background: transparent url('http://www.socialchorus.com/wp-content/themes/socialchorus/img/bgNav.png') repeat top left;
-  background: transparent url('snowflakeTile.gif') repeat top left;
+  background: transparent url('http://www.socialchorus.com/wp-content/themes/socialchorus/img/bgNav.png') repeat top left;
 }
 
 body > * {
@@ -313,14 +312,6 @@ td.action, th.action {
     top: 10px;
     left: 10px;
   }
-}
-
-#tree {
-  height: 150px;
-  width: 150px;
-  position: absolute;
-  top: -111px;
-  right: -40px;
 }
 
 .icon-bobby {
