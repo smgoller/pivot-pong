@@ -11,7 +11,6 @@ describe MatchObserver do
       observer.should_receive(:update_player_ranks)
       observer.should_receive(:create_logs)
       observer.should_receive(:check_achievements)
-      observer.should_receive(:check_specials)
       observer.should_receive(:check_totems)
       observer.should_receive(:mark_inactive_players)
       observer.after_save(match)
@@ -42,16 +41,6 @@ describe MatchObserver do
       Match.create(winner: me, loser: you)
       me.achievements.count.should > 0
       you.achievements.count.should > 0
-    end
-  end
-
-  describe "#check_specials" do
-    it "should check and perform specials of both players" do
-      bobby = Player.create(name: "bobby isaacson")
-      Match.create(winner: me, loser: bobby, occured_at: 1.day.ago)
-      me.reload.achievements.map(&:class).should include(SmiteBobby)
-      Match.create(winner: bobby, loser: me)
-      me.reload.achievements.map(&:class).should_not include(SmiteBobby)
     end
   end
 

@@ -15,7 +15,6 @@ Achievements
 -------
 Achievement checking is trigger based. Most of the time the achievements will revolve around the outcome of a match, but there are others that can be obtained outside of entering a match. For example, tweeting a victory or uploading a profile picture. The achievements model is mixed into [font awesome](http://fortawesome.github.com/Font-Awesome/) so your badge list can be extended to any of those as you can see through implementing any of the subclasses. Current list of achievement at the time of writing this are:
 
-- *Smite the Bobby* - Beat the one and only: Bobby Isaacson
 - *Twilight Saga* - Log a match after 6pm PST
 - *Overly Attached* - Last 6 matches were with the same person
 - *The Grind* - Play 5 consecutive matches without changing rank

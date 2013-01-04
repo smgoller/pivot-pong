@@ -9,8 +9,6 @@ class Achievement < ActiveRecord::Base
 
   before_create :set_defaults
 
-  SPECIALS = [SmiteBobby]
-
   class << self
     def title
       raise "Must be implemented in subclasses"
@@ -25,10 +23,6 @@ class Achievement < ActiveRecord::Base
     end
 
     def eligible?(player)
-      raise "Must be implemented in subclasses"
-    end
-
-    def special
       raise "Must be implemented in subclasses"
     end
   end

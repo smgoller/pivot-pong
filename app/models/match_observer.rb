@@ -3,7 +3,6 @@ class MatchObserver < ActiveRecord::Observer
     update_player_ranks(match)
     create_logs(match)
     check_achievements(match)
-    check_specials(match)
     check_totems(match)
     mark_inactive_players
   end
@@ -46,13 +45,6 @@ class MatchObserver < ActiveRecord::Observer
     end
     loser_achievements_needed.each do |achievement|
       achievement.create(player: loser, match: match) if achievement.eligible?(loser)
-    end
-  end
-
-  def check_specials(match)
-    achievements = Achievement::SPECIALS
-    achievements.each do |achievement|
-      achievement.special(match)
     end
   end
 
