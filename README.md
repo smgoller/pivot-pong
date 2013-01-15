@@ -36,6 +36,10 @@ Achievement checking is trigger based. Most of the time the achievements will re
 - *Beginner* - Welcome to the wonderful game of pong
 - *Same Sh*t, Different Day* - Stay the same rank 7 matches in a row
 
+Totem Pole
+-------
+On every player's show page there exists a totem pole. You are able to 'capture' another players totem by having your last recorded match resulting in a win. (may be changed later to reflect overall record between specific player in order to capture their totem)
+
 Analytics
 -------
 At the end of every match, a match log is also created and bound to each of the players. This records the match as well as what the players current rank was at the time of play. You can also see overall win percentage globally at /stats. Played around a little using the [raphael.js](http://raphaeljs.com/) library.
@@ -43,5 +47,14 @@ At the end of every match, a match log is also created and bound to each of the 
 Authentication
 -------
 The matches and players pages have simple http auth which can be set by **ENV['username']** and **ENV['password']**. They default to ping/pong respectively. Public pages include the list of achievements, what's new, and global stats.
+
+Configuration
+-------
+There are a number of configurations that can be set in order to customize your app to your specific company or whatever:
+
+- *ENV['username']* - username for http auth on access to post pages/actions
+- *ENV['password']* - password for http auth on access to post pages/actions
+- logo.png - this file exists in assets/images/logo.png that can customize the logo displayed in the header
+
 
 Welcome all comments and feedback (Twitter): [@barretto_chris](http://twitter.com/barretto_chris)
