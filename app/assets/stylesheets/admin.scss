@@ -4,4 +4,12 @@
     padding: 0;
     line-height: normal;
   }
+  table {
+    th, td {
+      text-align: left;
+    }
+    th.title {
+      width: 730px;
+    }
+  }
 }

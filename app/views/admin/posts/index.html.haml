@@ -3,14 +3,12 @@
 = link_to "New Post", new_admin_post_path
 %table
   %tr
-    %th Title
-    %th Body
+    %th.title Title
     %th.date Date
     %th Action
   - @posts.each do |post|
     %tr{class: cycle("even", "odd")}
-      %td= post.title
-      %td= post.body.html_safe
+      %td= link_to post.title, edit_admin_post_path(post)
       %td= post.created_at.strftime("%Y-%m-%d")
       %td.action
         = link_to 'edit', edit_admin_post_path(post)
