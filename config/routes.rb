@@ -6,7 +6,7 @@ Pong::Application.routes.draw do
       get 'players'
     end
   end
-  resources :updates, only: [:index]
+  resources :posts, only: [:index]
   resources :players, only: [:show, :update] do
     collection do
       get 'odds'
@@ -17,6 +17,11 @@ Pong::Application.routes.draw do
     member do
       get 'tweet'
     end
+  end
+
+  namespace :admin do
+    root to: 'posts#index'
+    resources :posts
   end
   root to: 'matches#rankings'
 end

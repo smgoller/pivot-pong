@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221185348) do
+ActiveRecord::Schema.define(:version => 20130115164845) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "player_id"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(:version => 20121221185348) do
     t.integer  "rank"
     t.boolean  "active",     :default => true
     t.string   "avatar"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "totems", :force => true do |t|

@@ -1,0 +1,12 @@
+= form_for([:admin, @post]) do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :body
+  = f.text_area :body, class: 'tinymce', rows: 10
+  %br/
+  %p
+    = link_to "Cancel", admin_posts_path
+    &nbsp;|&nbsp;
+    = submit_tag "Submit", disable_with: "Working..."
+
+= tinymce

@@ -1,0 +1,9 @@
+- content_for :title, "Updates"
+%h1 What's new?
+
+- @posts.each do |post|
+  .post
+    %h4= post.title
+    %i= post.created_at.strftime("%Y-%m-%d")
+    %br/
+    = post.body.html_safe

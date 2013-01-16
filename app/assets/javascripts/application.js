@@ -6,3 +6,4 @@
 //= require jquery.autocomplete
 //= require twitter/bootstrap
 //= require initialize
+//= require tinymce-jquery

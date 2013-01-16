@@ -1,6 +1,6 @@
 - if notice || alert
   .flash
     - if notice
-      .notice= notice
+      .notice= notice.html_safe
     - if alert
-      .alert= alert
+      .alert= alert.html_safe
