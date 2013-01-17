@@ -75,6 +75,7 @@ Configuration
 -------
 There are a number of configurations that can be set in order to customize your app to your specific company or whatever:
 
+- *ENV['logo_url']* - can dump a url in here or will just default to logo.png
 - *ENV['username']* - username for http auth on access to post pages/actions
 - *ENV['password']* - password for http auth on access to post pages/actions
 - *ENV['admin_username']* - username for http auth on access to /admin

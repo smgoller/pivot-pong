@@ -5,7 +5,11 @@ module ApplicationHelper
   end
 
   def location
-    ENV["PONG_LOCATION"] || "SF"
+    ENV["pong_location"] || "SF"
+  end
+
+  def logo
+    ENV['logo_url'] || "logo.png"
   end
 
   def player_avatar(player, options = {})
