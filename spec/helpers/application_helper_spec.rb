@@ -28,7 +28,7 @@ describe ApplicationHelper do
 
     context "when a location is configured" do
       before do
-        ENV["SC_PONG_LOCATION"] = "Starbase Alpha"
+        ENV["pong_location"] = "Starbase Alpha"
       end
 
       it { should == "Starbase Alpha" }
