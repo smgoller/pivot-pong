@@ -79,6 +79,7 @@ There are a number of configurations that can be set in order to customize your 
 - *ENV['password']* - password for http auth on access to post pages/actions
 - *ENV['admin_username']* - username for http auth on access to /admin
 - *ENV['admin_password']* - password for http auth on access to /admin
+- *ENV['pong_location']* - This appears in the header title and will default to SF. Geared more towards offices with multiple locations
 - logo.png - this file exists in assets/images/logo.png that can customize the logo displayed in the header
 
 Welcome all comments and feedback (Twitter): [@barretto_chris](http://twitter.com/barretto_chris)

@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def location
-    ENV["SC_PONG_LOCATION"] || "SF"
+    ENV["PONG_LOCATION"] || "SF"
   end
 
   def player_avatar(player, options = {})
