@@ -1,7 +1,7 @@
 Welcome to the World of Office Gaming
 ========
 
-Originally forked from [Sean Moon](https://github.com/seanmoon/pivot-pong), this app was created to provide a ladder ranking for internal ping pong matches. However, this can be repurposed for any kind of competitive play, and you are encouraged to fork your own version customary to your gameplay.
+Originally forked from [Sean Moon](https://github.com/seanmoon/pivot-pong), this app was created to provide a ladder ranking for internal ping pong matches. However, this can be repurposed for any kind of competitive play, and you are encouraged to fork your own version customary to your gameplay. See the live demo [HERE](http://pong-tester.herokuapp.com/). Play around with that as much as you like!
 
 Creation of Players
 -------
