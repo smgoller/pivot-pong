@@ -46,7 +46,19 @@ At the end of every match, a match log is also created and bound to each of the 
 
 Authentication
 -------
+PUBLIC
 The matches and players pages have simple http auth which can be set by **ENV['username']** and **ENV['password']**. They default to ping/pong respectively. Public pages include the list of achievements, what's new, and global stats.
+
+Admin
+=======
+
+Posts
+-------
+Want to let others know what kind of updates are going with your app? New achievements? New features? Upcoming releases? 'admin/posts'
+
+Players
+-------
+Manage your players 'admin/players'
 
 Configuration
 -------
@@ -54,7 +66,8 @@ There are a number of configurations that can be set in order to customize your 
 
 - *ENV['username']* - username for http auth on access to post pages/actions
 - *ENV['password']* - password for http auth on access to post pages/actions
+- *ENV['admin_username']* - username for http auth on access to /admin
+- *ENV['admin_password']* - password for http auth on access to /admin
 - logo.png - this file exists in assets/images/logo.png that can customize the logo displayed in the header
-
 
 Welcome all comments and feedback (Twitter): [@barretto_chris](http://twitter.com/barretto_chris)

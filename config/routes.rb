@@ -22,6 +22,8 @@ Pong::Application.routes.draw do
   namespace :admin do
     root to: 'posts#index'
     resources :posts
+    resources :players
+    resources :matches
   end
   root to: 'matches#rankings'
 end

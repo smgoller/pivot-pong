@@ -33,11 +33,6 @@ a {
   }
 }
 
-.logo-area {
-  width: 1000px;
-  margin: 0 auto;
-}
-
 header {
   background: white url("navStripe.png") repeat-x bottom left;
   padding: 15px 0 20px 0;
@@ -122,12 +117,18 @@ td.action, th.action {
   width: 200px;
   text-align: center;
 }
+marquee {
+  width: 300px;
+  float: right;
+}
 
+#page, .logo-area {
+  width: 1000px;
+  margin: 0 auto;
+}
 #page {
-  margin: 0 auto 50px auto;
   border: 1px solid #999;
   border-radius: 4px;
-  width: 1000px;
   padding: 25px;
   background-color: #dedede;
   position: relative;

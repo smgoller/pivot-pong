@@ -1,0 +1,8 @@
+= form_for([:admin, @player]) do |f|
+  = f.label :name
+  = f.text_field :name
+  %br/
+  %p
+    = link_to "Cancel", admin_players_path
+    &nbsp;|&nbsp;
+    = submit_tag "Submit", disable_with: "Working..."

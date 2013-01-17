@@ -2,7 +2,7 @@ class Match < ActiveRecord::Base
   validates :winner,      presence: true
   validates :loser,       presence: true
   validates :occured_at,  presence: true
-  validate :daily_limit
+  validate :daily_limit, on: :create
 
   belongs_to :winner, :class_name => 'Player'
   belongs_to :loser, :class_name => 'Player'

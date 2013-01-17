@@ -1,0 +1,12 @@
+= form_for([:admin, @match]) do |f|
+  = f.label :winner_name
+  = f.text_field :winner_name, autocomplete: "off"
+  = f.label :loser_name
+  = f.text_field :loser_name, autocomplete: "off"
+  = f.label :occured_at
+  = f.text_field :occured_at, value: @match.occured_at || Time.now.strftime("%Y-%m-%d %H:%M:%S")
+  %br/
+  %p
+    = link_to "Cancel", admin_players_path
+    &nbsp;|&nbsp;
+    = submit_tag "Submit", disable_with: "Working..."

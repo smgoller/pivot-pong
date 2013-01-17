@@ -5,6 +5,8 @@
     = stylesheet_link_tag    "application"
     = stylesheet_link_tag    "admin"
     = javascript_include_tag "application"
+    = javascript_include_tag "http://use.typekit.com/rol0dzy.js"
+    = javascript_tag "try{Typekit.load();}catch(e){}"
     = favicon_link_tag
     = csrf_meta_tag
 
@@ -16,6 +18,8 @@
     #page
       %nav
         = link_to_with_current "Posts", admin_posts_path
+        = link_to_with_current "Players", admin_players_path
+        = link_to_with_current "Matches", admin_matches_path
 
       = render 'shared/flash_messages'
       = yield
