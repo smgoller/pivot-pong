@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :create
-  skip_before_filter :authenticate, only: :show
+  skip_before_filter :authenticate, only: [:show, :players]
 
   include MatchesHelper
 

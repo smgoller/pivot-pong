@@ -1,8 +1,8 @@
 = form_for([:admin, @match]) do |f|
-  = f.label :winner_name
-  = f.text_field :winner_name, autocomplete: "off"
-  = f.label :loser_name
-  = f.text_field :loser_name, autocomplete: "off"
+  = label_tag :winner_name
+  = text_field_tag :winner_name, @match ? @match.winner.display_name : '', autocomplete: "off"
+  = label_tag :loser_name
+  = text_field_tag :loser_name, @match ? @match.loser.display_name : '', autocomplete: "off"
   = f.label :occured_at
   = f.text_field :occured_at, value: @match.occured_at || Time.now.strftime("%Y-%m-%d %H:%M:%S")
   %br/
