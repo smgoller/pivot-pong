@@ -46,15 +46,15 @@ At the end of every match, a match log is also created and bound to each of the 
 
 Authentication
 -------
-This was purposely made to have very light security. If you make your url public, other people are free to check out read only pages without access to post anything.
+This was purposely made to have very light security that can be toggled on the public side.
 
 PUBLIC
 
-The matches and players pages have simple http auth which can be set by **ENV['username']** and **ENV['password']**. They default to ping/pong respectively. Public pages include the list of achievements, what's new, and global stats.
+If you set *ENV['username']* and *ENV['password']*, this enables http auth. Other people are free to check out read only pages without access to any pages where you can post, unless you authenticate. Public pages include the list of achievements, what's new, and global stats.
 
 ADMIN
 
-The admin pages also have simple http auth which can be set by **ENV['admin_username']** and **ENV['admin_password']**. They default to admin/pingpong respectively. Public pages include the list of achievements, what's new, and global stats.
+The admin pages also have http auth which can be set by **ENV['admin_username']** and **ENV['admin_password']**. They default to admin/pingpong respectively and is always enabled. This is accessible from '/admin'
 
 Admin
 =======

@@ -4,12 +4,18 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
-    user = ENV['username'] || "ping"
-    pass = ENV['password'] || "pong"
-    unless Rails.env.test?
+    if !Rails.env.test? && user && pass
       authenticate_or_request_with_http_basic do |username, password|
         username == user && password == pass
       end
     end
+  end
+
+  def user
+    @user ||= ENV['username']
+  end
+
+  def pass
+    @pass ||= ENV['password']
   end
 end
