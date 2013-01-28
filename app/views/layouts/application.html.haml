@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title SocialChorus #{location} — #{yield :title}
+    %title #{location} — #{yield :title}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = javascript_include_tag "http://use.typekit.com/rol0dzy.js"
@@ -12,10 +12,9 @@
   %body
     %header
       .logo-area
-        = link_to image_tag(logo), root_url
+        = link_to logo, root_url
         = link_to image_tag("Panda-Aggressor.jpg"), root_url
     #page
-      -#%marquee= link_to Post.order("created_at DESC").first.title, posts_path
       .clearfix
       %nav
         = link_to_with_current "Rankings", root_path

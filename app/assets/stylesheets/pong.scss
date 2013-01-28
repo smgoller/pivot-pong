@@ -1,6 +1,8 @@
+@import 'colors';
+
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background: transparent url('http://www.socialchorus.com/wp-content/themes/socialchorus/img/bgNav.png') repeat top left;
+  background: transparent url('woodpanel.jpg') repeat top left;
 }
 
 body > * {
@@ -21,21 +23,23 @@ h1, h3 {
 
 a {
   text-decoration: none;
-  color: #6e1674;
+  color: $links;
   &.current {
     color: #eee;
-    background-color: #6e1674;
+    background-color: $links;
     border-radius: 4px;
     padding: 5px;
   }
   &:hover {
     text-decoration: none;
+    color: $links_hover;
   }
 }
 
 header {
-  background: white url("navStripe.png") repeat-x bottom left;
-  padding: 15px 0 20px 0;
+  background-color: $header_background;
+  border-bottom: 2px solid $header_border;
+  padding: 15px 0 10px 0;
   margin-bottom: 40px;
 }
 
@@ -127,8 +131,8 @@ marquee {
   margin: 0 auto;
 }
 #page {
-  border: 1px solid #999;
-  border-radius: 4px;
+  border: 2px solid $main_border;
+  border-radius: 5px;
   padding: 25px;
   background-color: #dedede;
   position: relative;
@@ -226,7 +230,7 @@ marquee {
       width: 100px;
       text-align: center;
       margin-top: -6px;
-      color: #6E1674;
+      color: $win_percentage;
       margin-left: 15px;
     }
   }
@@ -263,7 +267,7 @@ marquee {
     }
   }
 }
-.player > h1 { color: #ed174f; }
+.player > h1 { color: $player_header; }
 
 .achievements {
   td, th {
@@ -286,7 +290,7 @@ marquee {
 .badge-large {
   font-size: 40px;
   line-height: 40px;
-  color: #6e1674;
+  color: $large-badge;
 }
 
 .badge-wrap {
