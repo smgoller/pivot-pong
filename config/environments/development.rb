@@ -1,5 +1,5 @@
 Pong::Application.configure do
-  ENV['logo_url'] = "https://www.couchsurfing.org/assets/cslogo.png"
+  #ENV['logo_url'] = "http://pivotallabs.com/wordpress/wp-content/themes/agility/images/logo_main@2x.png"
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

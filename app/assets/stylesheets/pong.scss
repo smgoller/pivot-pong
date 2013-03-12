@@ -130,6 +130,9 @@ marquee {
   width: 1000px;
   margin: 0 auto;
 }
+.logo-area img {
+ max-height: 50px;
+}
 #page {
   border: 2px solid $main_border;
   border-radius: 5px;
