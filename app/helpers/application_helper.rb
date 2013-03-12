@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def logo
-    ENV['logo_url'] ? image_tag(ENV['logo_url']) : content_tag(:b, "My Company")
+    image_tag(ENV['logo_url'] || 'insertLogoHere.png')
   end
 
   def player_avatar(player, options = {})

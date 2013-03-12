@@ -2,7 +2,8 @@
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background: transparent url('woodpanel.jpg') repeat top left;
+  //background: transparent url('woodpanel.jpg') repeat top left;
+  background-color: #cce4f7;
 }
 
 body > * {
@@ -129,6 +130,9 @@ marquee {
 #page, .logo-area {
   width: 1000px;
   margin: 0 auto;
+}
+#page {
+  margin-bottom: 20px;
 }
 .logo-area img {
  max-height: 50px;
