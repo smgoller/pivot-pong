@@ -1,16 +1,26 @@
 development:
-  adapter: sqlite3
-  database: tmp/pivotpong_development.db
+  adapter: postgresql
+  encoding: utf8
+  database: pong_development
+  pool: 5
+  username:
+  password:
 
-test: &test
-  adapter: sqlite3
-  database: tmp/pivotpong_test.db
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
+  database: pong_test
+  pool: 5
+  username:
+  password:
 
 production:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
+  database: pong_production
   pool: 5
-  username: pivotpong
+  username:
   password:
-  min_messages: warning
-  database: pivotpong_production
+
+cucumber:
+  <<: *TEST
