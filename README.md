@@ -5,7 +5,7 @@ Originally forked from [Sean Moon](https://github.com/seanmoon/pivot-pong), this
 
 Creation of Players
 -------
-As you start entering the names for the winner/loser on /matches, it will auto complete if the player already exists. If not, they will be created. Each player also has their own profile page in which they can see their current win/loss record, match history, current achievements, rank history, and probability of beating another player. In order to support profile image uploading, you need to set the environment vars that carrierwave expects: ENV['AWS_KEY'] and ENV['AWS_SECRET']
+As you start entering the names for the winner/loser on /matches, it will auto complete if the player already exists. If not, they will be created. Each player also has their own profile page in which they can see their current win/loss record, match history, current achievements, rank history, and probability of beating another player. In order to support profile image uploading, you need to set the environment vars that carrierwave expects: ENV['AWS_KEY'], ENV['AWS_SECRET'] and ENV['AWS_BUCKET']
 
 Ladder Ranking
 -------
