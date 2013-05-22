@@ -11,5 +11,13 @@
     th.title {
       width: 730px;
     }
+    &.site_settings {
+      td.value input[type='text'] {
+        width: 96%;
+      }
+      i {
+        color: #aaa;
+      }
+    }
   }
 }

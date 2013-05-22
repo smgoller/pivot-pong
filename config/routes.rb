@@ -24,6 +24,12 @@ Pong::Application.routes.draw do
     resources :posts
     resources :players
     resources :matches
+    resources :site_settings, only: [:index] do
+      collection do
+        post 'group'
+        get 'restore_defaults'
+      end
+    end
   end
   root to: 'matches#rankings'
 end

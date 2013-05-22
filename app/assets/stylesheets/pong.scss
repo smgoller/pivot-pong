@@ -2,7 +2,6 @@
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  //background: transparent url('woodpanel.jpg') repeat top left;
   background-color: #cce4f7;
 }
 
@@ -297,7 +296,7 @@ marquee {
 .badge-large {
   font-size: 40px;
   line-height: 40px;
-  color: $large-badge;
+  color: $large_badge;
 }
 
 .badge-wrap {

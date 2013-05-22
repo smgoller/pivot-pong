@@ -1,0 +1,26 @@
+%h2 Site Settings
+
+%table.site_settings
+  %tr
+    %th Setting Type
+  %tr
+    %td
+      = form_for :site_settings, url: group_admin_site_settings_path do |f|
+        %h2 General Settings
+        - @general_settings.each do |site_setting|
+          .row
+            .span2= site_setting.setting_type
+            .span2= f.text_field "[#{site_setting.setting_type}][#{:value}]", value: site_setting.value
+            .span2
+              %i takes any css supported color value
+
+        %h2 Player Settings
+        - @player_settings.each do |site_setting|
+          .row
+            .span2= site_setting.setting_type
+            .span2= f.text_field "[#{site_setting.setting_type}][#{:value}]", value: site_setting.value
+            .span2
+              %i takes any css supported color value
+        = f.submit 'Submit', class: 'btn'
+
+%i= link_to 'restore defaults', restore_defaults_admin_site_settings_path, confirm: "are you sure you want to do this?"

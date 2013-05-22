@@ -34,4 +34,12 @@ describe ApplicationHelper do
       it { should == "Starbase Alpha" }
     end
   end
+
+  describe "#custom_styles" do
+    it "returns a style tag with custom style overrides" do
+      SiteSetting.find_or_create_by_setting_type('link color', value: 'red')
+      helper.custom_styles.should include("<style>")
+      helper.custom_styles.should include("red")
+    end
+  end
 end

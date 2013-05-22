@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115164845) do
+ActiveRecord::Schema.define(:version => 20130523005132) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "player_id"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(:version => 20130115164845) do
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "site_settings", :force => true do |t|
+    t.string   "setting_type"
+    t.string   "value"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "totems", :force => true do |t|

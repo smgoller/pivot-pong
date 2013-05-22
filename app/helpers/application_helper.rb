@@ -16,4 +16,8 @@ module ApplicationHelper
     img_src =  player.avatar.blank? ? "placeholder#{options unless options.empty?}.png" : player.avatar.url(options)
     image_tag img_src
   end
+
+  def custom_styles
+    content_tag :style, SiteSetting.generate_styles
+  end
 end
