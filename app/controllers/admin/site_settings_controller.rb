@@ -11,13 +11,13 @@ class Admin::SiteSettingsController < Admin::BaseController
         updateable.update_column(:value, settings[setting_type]["value"])
       end
     end
-    flash[:notice] = "Styles updated. Server must be restarted for changes to go into effect"
+    flash[:notice] = "Styles updated."
     redirect_to admin_site_settings_path
   end
 
   def restore_defaults
     SiteSetting.update_all(value: nil)
-    flash[:notice] = "Defaults Restored. Server must be restarted for changes to go into effect"
+    flash[:notice] = "Defaults Restored."
     redirect_to admin_site_settings_path
   end
 end
