@@ -71,6 +71,10 @@ Players
 -------
 Manage your matches 'admin/matches'
 
+Site Settings
+-------
+Ability to set custom colors for links, background, and borders in admin/site_settings
+
 Configuration
 -------
 There are a number of configurations that can be set in order to customize your app to your specific company or whatever:
