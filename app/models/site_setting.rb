@@ -7,7 +7,8 @@ class SiteSetting < ActiveRecord::Base
                        "large badge color",
                        "main border color",
                        "header background color",
-                       "header border color"]
+                       "header border color",
+                       "container background color"]
 
   PLAYER_SETTINGS = [ "player header color",
                       "win percentage color" ]
@@ -52,6 +53,10 @@ class SiteSetting < ActiveRecord::Base
 
     def win_percentage_color(attr)
       ".odds h3 {color: #{attr}}"
+    end
+
+    def container_background_color(attr)
+      "body {background-color: #{attr}}"
     end
   end
   private

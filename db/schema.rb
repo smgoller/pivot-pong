@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523005132) do
+ActiveRecord::Schema.define(:version => 20130524201402) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "player_id"
