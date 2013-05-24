@@ -25,7 +25,6 @@ Achievement checking is trigger based. Most of the time the achievements will re
 - *Where'd You Go?* - Gone inactive after 30 days of not playing
 - *I Heart You* - Last 3 logged matches were with the same person
 - *Morning Madness* - Log a match before 9am PST
-- *The Summit* - Played during the Social Chorus Summit
 - *You're on a Streak!* - Win 5 matches in a row
 - *Long Jump* - Advances more than 3 spots in rank from a single match
 - *Little Ben!* - Played more than 50 matches
