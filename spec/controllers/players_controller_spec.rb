@@ -13,7 +13,7 @@ describe PlayersController do
     it "should load the correct player" do
       get :show, id: me.to_param
       assigns(:player).should == me
-      assigns(:matches).should == me.matches.descending
+      assigns(:matches).should == me.matches.paginate(:page => 1).order("occured_at DESC")
       assigns(:average_games_per_day).should == 1
       response.should be_success
     end
