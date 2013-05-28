@@ -179,6 +179,24 @@ marquee {
     border-radius: 4px;
   }
 }
+
+.help {
+  height: 15px;
+  width: 15px;
+  padding: 2px 2px 3px 2px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid $main_border;
+  float: right;
+  display: block;
+  text-align: center;
+  &:after {
+    content: "?";
+  }
+  &:hover {
+    background-color: #c0c0c0;
+  }
+}
 .badges {
   font-size: 20px;
   height: 40px;

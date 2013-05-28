@@ -38,6 +38,8 @@
     - @player.totems.each do |totem|
       %div{ class: "totem totem_#{cycle(0,1,2,3)}", title: totem.loser.display_name }
         .totem_avatar= player_avatar totem.loser, :thumb
+    = link_to "", "", class: 'help', rel: 'popover', data: {title: "Build your totem pole!", content: "The winner of the last match you play with a specific user will result in the winner acquiring the other user's 'totem' to their pole. Beat lots of different people to grow your totem pole!", trigger: 'hover'}
+
   .clearfix
   %hr
   %h2 Rank History
