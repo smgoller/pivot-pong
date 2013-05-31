@@ -9,23 +9,8 @@
   = f.text_field :occured_at, value: Time.now.strftime("%Y-%m-%d %H:%M:%S")
   = submit_tag "Add match", disable_with: "Working..."
 
-%h2 Match history
+= render partial: 'shared/match_history', locals: {matches: @matches}
 
-= will_paginate @matches
-%table
-  %tr
-    %th.date Date
-    %th Winner
-    %th Loser
-    %th.action
-  - @matches.each do |m|
-    %tr{class: cycle("even", "odd")}
-      %td.date= m.occured_at.strftime("%Y-%m-%d")
-      %td= m.winner.display_name
-      %td= m.loser.display_name
-      %td.action
-        = link_to '#', 'https://twitter.com/intent/tweet', class: "twitter-share-button", data: {lang: "en", count: "none", text: "#{m.winner.display_name} just beat #{m.loser.display_name} in a vigorous game of SC Pong", url: match_url(m)}
-= will_paginate @matches
 - if @most_recent_match && @most_recent_match.achievements.present?
   .modal.fade
     .modal-header
