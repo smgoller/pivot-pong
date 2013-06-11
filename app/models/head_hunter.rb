@@ -9,7 +9,7 @@ class HeadHunter < Achievement
     end
 
     def badge
-      "icon-meh"
+      "icon-user"
     end
 
     def eligible?(player)
