@@ -18,7 +18,7 @@ describe Grind do
       log_3 = Hashie::Mash.new(rank: 2)
       log_4 = Hashie::Mash.new(rank: 2)
       log_5 = Hashie::Mash.new(rank: 2)
-      me.stub_chain(:logs, :order, :limit).and_return([log_1, log_2, log_3, log_4, log_5])
+      me.stub_chain(:logs, :descending, :limit).and_return([log_1, log_2, log_3, log_4, log_5])
       Grind.eligible?(me).should be_true
     end
   end

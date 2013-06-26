@@ -5,4 +5,15 @@ class Log < ActiveRecord::Base
   validates :rank, presence: true
   validates :player_id, presence: true
   validates :match_id, presence: true
+  validate :check_for_occured_at
+
+  scope :descending, order("occured_at DESC")
+
+  private
+
+  def check_for_occured_at
+    if self.occured_at.blank?
+      self.occured_at = Time.now
+    end
+  end
 end

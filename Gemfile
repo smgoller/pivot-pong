@@ -18,7 +18,6 @@ gem 'will_paginate', '~> 3.0'
 
 group :test, :development do
   gem 'hashie'
-  gem 'sqlite3'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'awesome_print', '~> 1.0'

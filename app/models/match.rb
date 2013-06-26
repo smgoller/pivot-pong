@@ -11,7 +11,7 @@ class Match < ActiveRecord::Base
 
   before_validation :set_default_occured_at_date, on: :create
 
-  scope :occurred_today, where("occured_at >= ? AND occured_at <= ?", Date.today.beginning_of_day, Date.today.end_of_day)
+  scope :occurred_today, lambda { |time| where("occured_at >= ? AND occured_at <= ?", time.beginning_of_day, time.end_of_day) }
   scope :descending, order("occured_at DESC")
 
   private
@@ -23,7 +23,7 @@ class Match < ActiveRecord::Base
   def daily_limit
     winner_id = self.winner_id
     loser_id = self.loser_id
-    played_today = Match.where(winner_id: winner_id, loser_id: loser_id).occurred_today.present? || Match.where(winner_id: loser_id, loser_id: winner_id).occurred_today.present?
+    played_today = Match.where(winner_id: winner_id, loser_id: loser_id).occurred_today(occured_at).present? || Match.where(winner_id: loser_id, loser_id: winner_id).occurred_today(occured_at).present?
     (errors[:bad_match] << "- Already played today!") if played_today
   end
 end
