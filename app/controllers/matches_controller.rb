@@ -9,7 +9,7 @@ class MatchesController < ApplicationController
       Player.find_or_create_by_name name.strip.downcase
     }
 
-    match = Match.new winner: winner, loser: loser
+    match = Match.new winner: winner, loser: loser, occured_at: params[:match][:occured_at]
 
     unless [winner, loser].all?(&:valid?) && match.save
       if match.errors.present?
