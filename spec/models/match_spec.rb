@@ -157,36 +157,4 @@ describe Match do
       p1.reload.should be_active
     end
   end
-
-  describe "#check_achievements" do
-    let!(:p1) { Player.create(name: "foo") }
-    let!(:p2) { Player.create(name: "bar") }
-
-    it "should award beginner to correct player(s)" do
-      p1.achievements.count.should == 0
-      p2.achievements.count.should == 0
-      Match.create(winner: p2, loser: p1)
-      p1.reload.achievements.map(&:class).should include(Beginner)
-      p2.reload.achievements.map(&:class).should include(Beginner)
-    end
-
-    it "should award number juan to the correct player" do
-      p1.rank.should == 1
-      p2.rank.should_not == 1
-      p1.achievements.map(&:class).should_not include(NumberJuan)
-      p2.achievements.map(&:class).should_not include(NumberJuan)
-
-      Match.create(winner: p2, loser: p1)
-
-      p1.reload.rank.should == 2
-      p2.reload.rank.should == 1
-      p1.achievements.map(&:class).should_not include(NumberJuan)
-      p2.achievements.map(&:class).should include(NumberJuan)
-    end
-
-    it "should assign the match to the achievement" do
-      m = Match.create(winner: p2, loser: p1)
-      p1.reload.achievements.should be_all{|a| a.match.should == m}
-    end
-  end
 end

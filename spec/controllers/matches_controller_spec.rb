@@ -92,18 +92,26 @@ describe MatchesController do
   end
 
   describe "GET #rankings" do
-    let!(:me) { Player.create(name: "me") }
-    let!(:you) { Player.create(name: "you") }
-    let!(:us) { Player.create(name: "us") }
-    let!(:them) { Player.create(name: "them")}
-    let(:occurred_at) { Time.now }
-    let!(:older_match) { Match.create(winner: you, loser: me, occured_at: occurred_at - 1.day) }
-    let!(:newer_match) { Match.create(winner: me, loser: you, occured_at: occurred_at) }
-    let!(:ten_months_ago_match) { Match.create(winner: Player.create(name: "one"), loser: Player.create(name: "two"), occured_at: occurred_at - 10.months) }
-    let!(:two_months_ago_match) { Match.create(winner: Player.create(name: "bro1"), loser: Player.create(name: "bro2"), occured_at: occurred_at - 2.months) }
-    before { get :rankings }
-    it { should be_success }
-    it { assigns(:rankings).should == [me, you] }
+    let(:me) { Player.create(name: "me") }
+    let(:you) { Player.create(name: "you") }
+    let(:us) { Player.create(name: "us") }
+    let(:them) { Player.create(name: "them")}
+    let(:occured_at) { Time.now }
+
+    it "returns the correctly ranked players" do
+      Match.create(winner: Player.create(name: "one"),
+                   loser: Player.create(name: "two"),
+                   occured_at: occured_at - 10.months)
+      Match.create(winner: Player.create(name: "bro1"),
+                   loser: Player.create(name: "bro2"),
+                   occured_at: occured_at - 2.months)
+      Match.create(winner: you, loser: me, occured_at: occured_at - 1.day)
+      Match.create(winner: me.reload, loser: you.reload, occured_at: occured_at)
+
+      get :rankings
+      response.should be_success
+      assigns(:rankings).should == [me, you]
+    end
   end
 
   describe "GET #players" do

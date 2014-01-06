@@ -17,13 +17,13 @@ class MatchObserver < ActiveRecord::Observer
 
     if winner_rank > loser_rank
       new_rank = (winner_rank + loser_rank) / 2
-      winner.update_attributes :rank => nil
+      winner.update_attributes(rank: nil)
       Player.where(['rank < ? AND rank >= ?', winner_rank, new_rank]).order('rank desc').each do |player|
-        player.update_attributes :rank => player.rank + 1
+        player.update_attributes(rank: player.rank + 1)
       end
-      winner.update_attributes :rank => new_rank, :active => true
-      loser.reload.update_attributes :active => true
+      winner.update_attributes(rank: new_rank, active: true)
     end
+    loser.update_attributes(rank: loser_rank, active: true) if !loser.active?
   end
 
   def create_logs(match)

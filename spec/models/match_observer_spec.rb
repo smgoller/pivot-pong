@@ -22,8 +22,18 @@ describe MatchObserver do
       me.rank.should == 1
       you.rank.should == 2
       observer.send(:update_player_ranks, match)
+      you.reload.rank.should == 1
+      me.reload.rank.should == 2
+    end
+
+    it "make the loser active and ranked if they are inactive" do
+      me.update_attributes(active: false, rank: nil)
+      you.update_attributes(rank: 1)
+      me.should_not be_active
+      observer.send(:update_player_ranks, match)
       you.rank.should == 1
       me.rank.should == 2
+      me.should be_active
     end
   end
 
