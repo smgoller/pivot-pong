@@ -3,9 +3,9 @@ class Player < ActiveRecord::Base
 
   has_many :winning_matches, :class_name => 'Match', :foreign_key => 'winner_id'
   has_many :losing_matches, :class_name => 'Match', :foreign_key => 'loser_id'
-  has_many :achievements
-  has_many :logs
-  has_many :totems
+  has_many :achievements, :dependent => :destroy
+  has_many :logs, :dependent => :destroy
+  has_many :totems, :dependent => :destroy
 
   before_validation :downcase_name
   before_save :clear_ranks_for_inactive_players

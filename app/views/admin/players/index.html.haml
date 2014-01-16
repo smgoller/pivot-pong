@@ -9,7 +9,7 @@
     %th Action
   - @players.each do |player|
     %tr{class: cycle("even", "odd")}
-      %td= link_to player.name, edit_admin_player_path(player)
+      %td= link_to player.display_name, edit_admin_player_path(player)
       %td= player.created_at.strftime("%Y-%m-%d")
       %td.action
         = link_to 'edit', edit_admin_player_path(player)

@@ -1,0 +1,17 @@
+- content_for :title, "Achievement: #{@achievement.title}"
+.achievements
+  %h2
+    %i{class: @achievement.badge}
+    #{@achievement.title}: #{@achievement.description}
+  %p
+    = "#{@achievements.count} have earned the"
+    %i= @achievement.title
+    achievement
+  %table
+    %tr
+      %th.icon Name
+      %th Achieved
+    - @achievements.each do |achievement|
+      %tr{class: cycle("even", "odd")}
+        %td= link_to achievement.player.display_name, player_path(achievement.player)
+        %td= achievement.created_at.strftime("%Y-%m-%d")

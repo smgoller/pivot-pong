@@ -1,7 +1,6 @@
 - content_for :title, "Achievements"
 .achievements
   %h2 Achievements
-
   %table
     %tr
       %th.icon Badge
@@ -11,5 +10,5 @@
       %tr{class: cycle("even", "odd")}
         %td.icon
           %i{class: achievement.badge}
-        %td= achievement.title
+        %td= link_to achievement.title, achievement_path(achievement.slug)
         %td= achievement.description

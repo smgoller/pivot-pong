@@ -1,5 +1,5 @@
 Pong::Application.routes.draw do
-  resources :achievements, only: [:index]
+  resources :achievements, only: [:index, :show]
   resources :matches do
     collection do
       get 'rankings'

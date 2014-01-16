@@ -25,8 +25,15 @@ class Achievement < ActiveRecord::Base
     def eligible?(player)
       raise "Must be implemented in subclasses"
     end
+
+    def slug
+      to_s.underscore
+    end
   end
 
+  def slug
+    self.class.to_s.underscore
+  end
 
   private
 
