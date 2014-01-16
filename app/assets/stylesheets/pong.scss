@@ -343,7 +343,9 @@ a [class*=" icon-"]:before {
 .stat {
   position: relative;
   background-color: #888;
-  h1 {
+  margin: 10px;
+  display: inline-block;
+  h4 {
     color: #fff;
     position: absolute;
     top: 10px;

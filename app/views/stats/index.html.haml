@@ -1,15 +1,15 @@
 - content_for :title, "Stats"
 #games_played.stat
-  %h1 Who's playing the most?
+  %h4 Who's playing?
 #winning_matches.stat
-  %h1 Who's winning the most?
+  %h4 Who's winning?
 #winning_percentage.stat
-  %h1 Who's has the highest percentage of winning?
+  %h4 Who wins most of the time?
 
 = javascript_include_tag 'pie'
 :javascript
   $('document').ready(function () {
-    Raphael("games_played", 800, 800).pieChart(400, 400, 200, #{@matches_values}, #{@matches_labels}, "#ccc");
-    Raphael("winning_matches", 800, 800).pieChart(400, 400, 200, #{@winning_matches}, #{@winning_matches_labels}, "#ccc");
-    Raphael("winning_percentage", 800, 800).pieChart(400, 400, 200, #{@winning_percentage}, #{@winning_percentage_labels}, "#ccc");
+    Raphael("games_played", 450, 450).pieChart(200, 200, 100, #{@matches_values}, #{@matches_labels}, "#ccc");
+    Raphael("winning_matches", 450, 450).pieChart(200, 200, 100, #{@winning_matches}, #{@winning_matches_labels}, "#ccc");
+    Raphael("winning_percentage", 450, 450).pieChart(200, 200, 100, #{@winning_percentage}, #{@winning_percentage_labels}, "#ccc");
   });
