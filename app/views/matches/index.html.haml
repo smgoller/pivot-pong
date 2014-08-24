@@ -6,7 +6,7 @@
   = label_tag :loser_name
   = text_field_tag :loser_name, "", autocomplete: "off"
   = f.label :occured_at
-  = f.text_field :occured_at, value: Time.now.strftime("%Y-%m-%d %H:%M:%S")
+  = f.text_field :occured_at
   = submit_tag "Add match", disable_with: "Working..."
 
 = render partial: 'shared/match_history', locals: {matches: @matches}

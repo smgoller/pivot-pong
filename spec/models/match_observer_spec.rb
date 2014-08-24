@@ -4,7 +4,7 @@ describe MatchObserver do
   let(:me) { Player.create(name: 'me') }
   let(:you) { Player.create(name: 'you') }
   let(:observer) { MatchObserver.instance }
-  let(:match) { mock_model(Match, winner: you, loser: me, occured_at: Time.now) }
+  let(:match) { mock_model(Match, winner: you, loser: me, occured_at: Time.current) }
 
   describe "#after_save" do
     it "should make the appropriate method calls" do

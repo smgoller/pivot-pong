@@ -18,7 +18,7 @@ class Admin::MatchesController < Admin::BaseController
     winner, loser = params.values_at(:winner_name, :loser_name).map { |name|
       Player.find_or_create_by_name name.strip.downcase
     }
-    occured_at = params[:match].present? ? params[:match][:occured_at] : Time.now
+    occured_at = params[:match].present? ? params[:match][:occured_at] : Time.current
     if @match.update_attributes winner: winner, loser: loser, occured_at: occured_at
       flash.notice = "Match successfully updated"
       redirect_to admin_matches_path
@@ -33,7 +33,7 @@ class Admin::MatchesController < Admin::BaseController
       Player.find_or_create_by_name name.strip.downcase
     }
 
-    occured_at = params[:match].present? ? params[:match][:occured_at] : Time.now
+    occured_at = params[:match].present? ? params[:match][:occured_at] : Time.current
     match = Match.new winner: winner, loser: loser, occured_at: occured_at
 
     unless [winner, loser].all?(&:valid?) && match.save
