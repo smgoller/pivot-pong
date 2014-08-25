@@ -13,7 +13,7 @@ class WorkingHard < Achievement
     end
 
     def eligible?(player)
-      player.matches.occurred_today(Time.now).size > 5
+      player.matches.occurred_today(Time.current).size > 5
     end
   end
 end

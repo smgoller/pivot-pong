@@ -4,7 +4,7 @@
   = label_tag :loser_name
   = text_field_tag :loser_name, @match ? @match.loser.display_name : '', autocomplete: "off"
   = f.label :occured_at
-  = f.text_field :occured_at, value: @match.occured_at || Time.now.strftime("%Y-%m-%d %H:%M:%S")
+  = f.text_field :occured_at, value: @match.occured_at || Time.current.strftime("%Y-%m-%d %H:%M:%S")
   %br/
   %p
     = link_to "Cancel", admin_players_path

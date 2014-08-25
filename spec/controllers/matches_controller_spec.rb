@@ -4,7 +4,7 @@ describe MatchesController do
   subject { response }
 
   describe "GET #index" do
-    let(:occured_at) { Time.now }
+    let(:occured_at) { Time.current }
     let(:me) { Player.create(name: "me") }
     let(:you) { Player.create(name: "you") }
     let!(:newer_match) { Match.create(winner: me, loser: you, occured_at: occured_at) }
@@ -25,7 +25,7 @@ describe MatchesController do
   end
 
   describe "GET #show" do
-    let(:occured_at) { Time.now }
+    let(:occured_at) { Time.current }
     let(:me) { Player.create(name: "me") }
     let(:you) { Player.create(name: "you") }
     let!(:match) { Match.create(winner: me, loser: you, occured_at: occured_at) }
@@ -96,7 +96,7 @@ describe MatchesController do
     let(:you) { Player.create(name: "you") }
     let(:us) { Player.create(name: "us") }
     let(:them) { Player.create(name: "them")}
-    let(:occured_at) { Time.now }
+    let(:occured_at) { Time.current }
 
     it "returns the correctly ranked players" do
       Match.create(winner: Player.create(name: "one"),

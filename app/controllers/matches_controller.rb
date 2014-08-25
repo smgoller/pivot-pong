@@ -9,7 +9,7 @@ class MatchesController < ApplicationController
       Player.find_or_create_by_name name.strip.downcase
     }
 
-    occured_at = params[:match].present? ? params[:match][:occured_at] : Time.now
+    occured_at = params[:match].present? ? params[:match][:occured_at] : Time.current
     match = Match.new winner: winner, loser: loser, occured_at: occured_at
 
     unless [winner, loser].all?(&:valid?) && match.save

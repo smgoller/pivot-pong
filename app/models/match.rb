@@ -17,7 +17,7 @@ class Match < ActiveRecord::Base
   private
 
   def set_default_occured_at_date
-    self.occured_at ||= Time.now
+    self.occured_at ||= Time.current
   end
 
   def daily_limit

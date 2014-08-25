@@ -13,7 +13,7 @@ class Log < ActiveRecord::Base
 
   def check_for_occured_at
     if self.occured_at.blank?
-      self.occured_at = Time.now
+      self.occured_at = Time.current
     end
   end
 end
