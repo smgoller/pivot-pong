@@ -15,7 +15,7 @@ describe SameShtDifferentDay do
     it "should be eligible if you stay the same rank 7 matches in a row" do
       logs = []
       7.times{ logs << Hashie::Mash.new(rank: 2) }
-      me.stub_chain(:logs, :limit).and_return(logs)
+      me.stub_chain(:logs, :descending, :limit).and_return(logs)
       SameShtDifferentDay.eligible?(me).should be_true
     end
   end
