@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby '2.2.3'
+
 gem 'carrierwave'
 gem 'fog'
 gem 'font-awesome-rails'
@@ -15,6 +17,7 @@ gem 'therubyracer'
 gem 'tinymce-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'will_paginate', '~> 3.0'
+gem 'rails_12factor'
 
 group :test, :development do
   gem 'hashie'
