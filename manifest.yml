@@ -1,11 +1,11 @@
 ---
 buildpack: ruby_buildpack
 services:
-  - database
+  - rails-postgres
 env:
   RACK_ENV: production
   RAILS_ENV: production
-  pong_location: Seattle
+  pong_location: Beaverton
 applications:
-  - name: seattle-pong
+  - name: beaverton-pong
     command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
